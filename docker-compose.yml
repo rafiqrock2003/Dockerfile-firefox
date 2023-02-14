@@ -1,0 +1,21 @@
+version: '3.8'
+
+  #volumes:
+  #extra:
+
+services:
+
+  firefox103:
+    image: kasm-firefox103
+    shm_size: 512m  
+    environment:
+      - VNC_PW=password
+      - TZ='Asia/Kolkata'
+    restart: unless-stopped
+   #volumes:
+      #- ./dockerstartup:/dockerstartup
+      #- ./www:/usr/share/kasmvnc/www
+      #- ./extra:/usr/share/extra
+    ports:
+      - 6901:6901
+
